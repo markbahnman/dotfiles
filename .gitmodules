@@ -1,3 +1,33 @@
 [submodule "vimrc/bundle/fugitive"]
 	path = vimrc/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vimrc/bundle/command-t"]
+	path = vimrc/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "vimrc/bundle/delmitmate"]
+	path = vimrc/bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vimrc/bundle/closetag"]
+	path = vimrc/bundle/closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "vimrc/bundle/pyflakes"]
+	path = vimrc/bundle/pyflakes
+	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "vimrc/bundle/nerdcommenter"]
+	path = vimrc/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "vimrc/bundle/supertab"]
+	path = vimrc/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "vimrc/bundle/tagbar"]
+	path = vimrc/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vimrc/bundle/solarized"]
+	path = vimrc/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vimrc/bundle/CSApprox"]
+	path = vimrc/bundle/CSApprox
+	url = https://github.com/godlygeek/csapprox.git
+[submodule "vimrc/bundle/Yankring"]
+	path = vimrc/bundle/Yankring
+	url = https://github.com/chrismetcalf/vim-yankring.git
