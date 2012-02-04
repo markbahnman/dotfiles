@@ -1,2 +1,57 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+set nocompatible
+set backspace=indent,eol,start
+
+set t_Co=256
+
+set mouse=a
+
+map <MouseMiddle> <Esc>"*p
+
+set backupdir=~/.vim/sessions
+set dir~/.vim/sessions
+
+set noswapfile
+
+set undodir=~/.vim/undodir
+set undofile
+
+syntax on
+
+let mapleader=","
+let maplocalleader="\\"
+
+noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>O <Esc>:CommandTFlush<CR>
+noremap <leader>m <Esc>:CommandTBuffer<CR>
+
+noremap <F2> <Esc>:w<CR>
+inoremap <F2> <Esc>:w<CR>
+nnoremap <F2> <Esc>:w<CR>
+vnoremap <F2> <Esc>:w<CR>
+
+noremap <F1> <Esc>:w<CR>
+inoremap <F1> <Esc>:w<CR>
+nnoremap <F1> <Esc>:w<CR>
+vnoremap <F1> <Esc>:w<CR>
+
+set pastetoggle=<F3>
+
+set title
+set titleold="Terminal"
+set titlestring=%F\ -\ Vim
+
+filetype on
+filetype plugin on
+
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colorscheme solarized
