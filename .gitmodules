@@ -31,3 +31,9 @@
 [submodule "vimrc/bundle/Yankring"]
 	path = vimrc/bundle/Yankring
 	url = https://github.com/chrismetcalf/vim-yankring.git
+[submodule "vimrc/bundle/Cpp11"]
+	path = vimrc/bundle/Cpp11
+	url = https://github.com/vim-scripts/Cpp11-Syntax-Support.git
+[submodule "vimrc/bundle/indentguides"]
+	path = vimrc/bundle/indentguides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
