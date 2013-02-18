@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# This git hook builds the jekyll blog from the _origbranch branch
+# and commits the changes to the _destbranch branch. You will still
+# need to push the commits in master after it's done.
+
+echo "post-commit">&2
+# executables prefix
+_prefix="/usr/bin"
+# git executable
+_git="$_prefix/git"
+
+# site generation executable
+_generate="/usr/local/bin/jekyll"
+# options for the generator
+_opts=(--no-safe --no-server --no-auto)
+
+# branch from which to generate site
+_origbranch="source"
+# branch holding the generated site
+_destbranch="master"
+
+# directory holding the generated site -- should be outside this repo
+_site="$("/bin/mktemp" -d /tmp/_site.XXXXXXXXX)"
+# the current branch
+_currbranch="$(/bin/grep "^*" < <("$_git" branch) | "$_prefix"/cut -d' ' -f2)"
+
+if [[ $_currbranch == $_origbranch ]]; then # we should generate the site
+    # go to root dir of the repo
+    cd "$("$_git" rev-parse --show-toplevel)"
+    # generate the site
+    "$_generate" ${_opts[@]} . "$_site"
+    # switch to branch the site will be stored
+    "$_git" checkout "$_destbranch"
+    # overwrite existing files
+    builtin shopt -s dotglob
+    /bin/cp -rf "$_site"/* .
+    builtin shopt -u dotglob
+    # add any new files
+    "$_git" add .
+    # commit all changes with a default message
+    "$_git" commit -a -m "updated site @ $(date +"%F %T")"
+    #push changes to master
+    #"$_git" push origin master
+    # cleanup
+    /bin/rm -rfv "$_site"
+    # return
+    "$_git" checkout "$_origbranch"
+fi
