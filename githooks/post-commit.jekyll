@@ -4,7 +4,6 @@
 # and commits the changes to the _destbranch branch. You will still
 # need to push the commits in master after it's done.
 
-echo "post-commit">&2
 # executables prefix
 _prefix="/usr/bin"
 # git executable
